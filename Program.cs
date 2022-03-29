@@ -1,5 +1,5 @@
 ﻿using System;
-using CorEscuela.Entidades;
+using CoreEscuela.Entidades;
 
 namespace CsPlatziIntro
 {
@@ -10,7 +10,8 @@ namespace CsPlatziIntro
             var escuela = new Escuela("Platzi School", 2019);
             escuela.Pais = "Mexico";
             escuela.Ciudad = "Mexico";
-            Console.WriteLine(escuela.Nombre, escuela.AñoDeCreacion);
+            escuela.TipoEscuela = TiposEscuela.Secundaria;
+            Console.WriteLine(escuela);
         }
     }
 }
