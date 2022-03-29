@@ -1,5 +1,6 @@
 ﻿using System;
 using CoreEscuela.Entidades;
+using static System.Console;
 
 namespace CsPlatziIntro
 {
@@ -11,26 +12,29 @@ namespace CsPlatziIntro
             escuela.TipoEscuela = TiposEscuela.Secundaria;
             Console.WriteLine(escuela);
 
-            var arregloCursos = new Curso[3];
-
-            arregloCursos[0] = new Curso()
-            {
-                Nombre = "101",
-                Jornada = TiposJornada.Mañana
+            // Curso[] arregloCursos = {
+            //     new Curso("101", TiposJornada.Mañana),
+            //     new Curso("201", TiposJornada.Tarde),
+            //     new Curso("301", TiposJornada.Noche)
+            // };
+            // escuela.Cursos = arregloCursos;
+            escuela.Cursos = new Curso[] {
+                new Curso("101", TiposJornada.Mañana),
+                new Curso("201", TiposJornada.Tarde),
+                new Curso("301", TiposJornada.Noche)
             };
-            var curso2 = new Curso()
+            WriteLine("===========================");
+            WriteLine("Cursos Escuela");
+            WriteLine("===========================");
+            // escuela.Cursos = null;
+            if (escuela?.Cursos != null)
             {
-                Nombre = "201",
-                Jornada = TiposJornada.Tarde
-            };
-            arregloCursos[1] = curso2;
-            arregloCursos[2] = new Curso
-                {
-                    Nombre = "301",
-                    Jornada = TiposJornada.Noche
-                };
-            Console.WriteLine("===========================");
-            ImprimirCursos(arregloCursos);
+                ImprimirCursos(escuela.Cursos);
+            }
+            else
+            {
+                WriteLine("No hay cursos");
+            }
 
         }
 
@@ -40,7 +44,7 @@ namespace CsPlatziIntro
             {
                 if (curso != null)
                 {
-                    Console.WriteLine($"{curso.UniqueId} {curso.Nombre} {curso.Jornada}");
+                    WriteLine($"{curso.UniqueId} {curso.Nombre} {curso.Jornada}");
                 }
             }
         }
