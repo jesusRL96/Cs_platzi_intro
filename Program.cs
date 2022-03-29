@@ -11,23 +11,38 @@ namespace CsPlatziIntro
             escuela.TipoEscuela = TiposEscuela.Secundaria;
             Console.WriteLine(escuela);
 
-            var curso1 = new Curso() {
+            var arregloCursos = new Curso[3];
+
+            arregloCursos[0] = new Curso()
+            {
                 Nombre = "101",
                 Jornada = TiposJornada.Mañana
             };
-            var curso2 = new Curso() {
+            var curso2 = new Curso()
+            {
                 Nombre = "201",
                 Jornada = TiposJornada.Tarde
             };
-            var curso3 = new Curso() {
-                Nombre = "301",
-                Jornada = TiposJornada.Noche
-            };
+            arregloCursos[1] = curso2;
+            arregloCursos[2] = new Curso
+                {
+                    Nombre = "301",
+                    Jornada = TiposJornada.Noche
+                };
             Console.WriteLine("===========================");
-            Console.WriteLine($"{curso1.Nombre} {curso1.Jornada} {curso1.UniqueId}");
-            Console.WriteLine($"{curso2.Nombre} {curso2.Jornada} {curso2.UniqueId}");
-            Console.WriteLine(curso3 + ", " + curso3.UniqueId);
+            ImprimirCursos(arregloCursos);
 
+        }
+
+        private static void ImprimirCursos(Curso[] arregloCursos)
+        {
+            foreach (var curso in arregloCursos)
+            {
+                if (curso != null)
+                {
+                    Console.WriteLine($"{curso.UniqueId} {curso.Nombre} {curso.Jornada}");
+                }
+            }
         }
     }
 }
