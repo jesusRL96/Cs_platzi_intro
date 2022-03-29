@@ -7,9 +7,7 @@ namespace CsPlatziIntro
     {
         static void Main(string[] args)
         {
-            var escuela = new Escuela("Platzi School", 2019);
-            escuela.Pais = "Mexico";
-            escuela.Ciudad = "Mexico";
+            var escuela = new Escuela("Platzi School", 2019,TiposEscuela.Secundaria, ciudad:"Mexico");
             escuela.TipoEscuela = TiposEscuela.Secundaria;
             Console.WriteLine(escuela);
         }
