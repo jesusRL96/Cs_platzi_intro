@@ -1,4 +1,4 @@
-using System
+using System;
 namespace CoreEscuela.Entidades
 {
     public class Alumno

@@ -1,5 +1,5 @@
-using System
-using CoreEscuela.Entidades
+using System;
+using CoreEscuela.Entidades;
 namespace CoreEscuela.Entidades
 {
     public class Evaluacion
